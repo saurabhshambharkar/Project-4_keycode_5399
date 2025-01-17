@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Connection Platform</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Event Connection Platform</h1>
+        <p>Fostering meaningful connections during social gatherings</p>
+    </header>
+    <main>
+        <section id="register">
+            <h2>Register Your Profile</h2>
+            <form id="registrationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="bio">Short Bio:</label>
+                <textarea id="bio" name="bio" rows="4" required></textarea>
+
+                <label for="hobbies">Hobbies:</label>
+                <input type="text" id="hobbies" name="hobbies" placeholder="e.g., Music, Hiking" required>
+
+                <label for="code">Unique Code:</label>
+                <input type="text" id="code" name="code" maxlength="4" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="profiles">
+            <h2>Discover Participants</h2>
+            <div id="profileContainer">
+                <!-- Dynamic profiles will be added here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Event Connection Platform</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
