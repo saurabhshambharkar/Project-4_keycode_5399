@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Dashboard Page -->
+    <header class="header">
+        <a href="#" class="logo"><span>Ec</span>Org</a>
+
+        <nav class="navbar">
+            <a href="#" id="Dashboard" class="first">Dashboard</a>
+            <a href="#contact">Contact</a>
+            <a href="#" id="logout-btn">logout</a>
+        </nav>
+        <div id="menu-bar" class="fas fa-bars"></div>
+    </header>
+    <main>
+        <section id="register">
+            <h2>Register Your Profile</h2>
+            <form id="registrationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="bio">Short Bio:</label>
+                <textarea id="bio" name="bio" rows="4" required></textarea>
+
+                <label for="hobbies">Hobbies:</label>
+                <input type="text" id="hobbies" name="hobbies" placeholder="e.g., Music, Hiking" required>
+
+                <label for="code">Unique Code:</label>
+                <input type="text" id="code" name="code" maxlength="4" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="profiles">
+            <h2>Discover Participants</h2>
+            <div id="profileContainer">
+                <!-- Dynamic profiles will be added here -->
+            </div>
+        </section>
+    </main>
+    <section class="footer">
+        <div class="box-container container">
+            <div class="box">
+                <i class="fas fa-phone"></i>
+                <h3>phone number</h3>
+                <p>+123-456-6789</p>
+                <p>+233333333333</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>our address</h3>
+                <p>mumbai,india</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-clock"></i>
+                <h3>opening hours</h3>
+                <p>10:00am to 10:00pm</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-envelope"></i>
+                <h3>email address </h3>
+                <p>atul@123</p>
+                <p>akash@123</p>
+            </div>
+        </div>
+        <p class="credit">created by <span>Akash chouhan</span></p>
+    </section>
+  <script>
+  // Check if the user is logged in (retrieve user data from localStorage)
+  const loginEmail = localStorage.getItem('loggedInUser');
+  
+  if (loginEmail) {
+    const user = JSON.parse(localStorage.getItem(loginEmail));
+    document.getElementById('user-name').textContent = user.username;
+  } else {
+    // If not logged in, redirect to login page
+    window.location.href = '#login';
+  }
+  
+  // Logout functionality
+  document.getElementById('logout-btn').addEventListener('click', function() {
+    // Remove user data from localStorage and redirect to login page
+    localStorage.removeItem('loggedInUser');
+    alert('You have been logged out successfully!');
+    window.location.href = './index.html';
+  });
+  </script>
+  <script src="../index.js"></script>
+</body>
+</html>
